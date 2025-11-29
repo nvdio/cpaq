@@ -1,1 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protéger nos aînés contre la fraude</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        /* Header styles */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1.5rem 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Main content styles */
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+        
+        .intro-section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .intro-section p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .highlight-list {
+            list-style-type: none;
+            margin: 1.5rem 0;
+        }
+        
+        .highlight-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .highlight-list li:before {
+            content: "•";
+            color: #3498db;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Section styles */
+        section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #ecf0f1;
+        }
+        
+        /* Footer styles */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            main {
+                padding: 0 1rem;
+            }
+            
+            .intro-section, section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Protéger nos aînés contre la fraude</h1>
+        <p class="subtitle">Sensibilisation et prévention pour la sécurité financière des personnes âgées</p>
+    </header>
+    
+    <main>
+        <div class="intro-section">
+            <p>Le cours de l'année suivant le cours de l'Année suivant est remarqué :</p>
+            <ul class="highlight-list">
+                <li>Les réseaux de la sécurité, les démarches et autres des amis</li>
+                <li>Les réseaux de la sécurité</li>
+            </ul>
+        </div>
+        
+        <section>
+            <h2>Conseils de prévention</h2>
+            <p>Apprenez à reconnaître les signes de fraude et protégez vos proches âgés contre les escroqueries financières.</p>
+            <!-- Additional content would go here -->
+        </section>
+        
+        <section>
+            <h2>Ressources utiles</h2>
+            <p>Trouvez des organisations et services qui peuvent aider en cas de suspicion de fraude.</p>
+            <!-- Additional content would go here -->
+        </section>
+    </main>
+    
+    <footer>
+        <p class="copyright">Conception : © Sande D'Ocques</p>
+    </footer>
 
+    <script>
+        // Simple script for interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add subtle animation to sections when they come into view
+            const sections = document.querySelectorAll('section');
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            sections.forEach(section => {
+                section.style.opacity = 0;
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
