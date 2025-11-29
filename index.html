@@ -178,7 +178,31 @@
             gap: 12px;
         }
 
-        .lang-toggle,
+        .lang-toggle {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--card-border);
+            color: #fff;
+            padding: 10px 16px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+        }
+
+        .lang-toggle:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .lang-toggle.active {
+            background: rgba(77, 208, 225, 0.2);
+            border-color: #4dd0e1;
+        }
+
         .nav-toggle {
             background: rgba(255, 255, 255, 0.08);
             border: 1px solid var(--card-border);
@@ -187,15 +211,6 @@
             border-radius: 12px;
             cursor: pointer;
             transition: all 0.25s ease;
-        }
-
-        .lang-toggle:hover,
-        .nav-toggle:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-        }
-
-        .nav-toggle {
             display: none;
             flex-direction: column;
             gap: 4px;
@@ -744,6 +759,15 @@
             margin-bottom: 8px;
         }
 
+        /* Language Toggle */
+        .lang-option {
+            display: none;
+        }
+
+        .lang-option.active {
+            display: block;
+        }
+
         /* Responsive Design */
         @media (max-width: 1024px) {
             .hero-content,
@@ -817,19 +841,38 @@
                 <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzIiIGhlaWdodD0iNzIiIHZpZXdCb3g9IjAgMCA3MiA3MiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjcyIiBoZWlnaHQ9IjcyIiByeD0iMTIiIGZpbGw9IiMwZjY4ZDciLz4KPHN2ZyB4PSIxOCIgeT0iMTgiIHdpZHRoPSIzNiIgaGVpZ2h0PSIzNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj4KPHBhdGggZD0iTTEyIDIyQzE3LjUyMiAyMiAyMiAxNy41MjIgMjIgMTJDMjIgNi40Nzc4IDE3LjUyMiAyIDEyIDJDNi40Nzc4IDIgMiA2LjQ3NzggMiAxMkMyIDE3LjUyMiA2LjQ3NzggMjIgMTIgMjJaIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiLz4KPHBhdGggZD0iTTEyIDE2VjEyIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiLz4KPHBhdGggZD0iTTEyIDhWOC4wMSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIi8+Cjwvc3ZnPgo8L3N2Zz4K" alt="Logo CPAQ" class="logo-img">
                 <div class="logo-text">
                     <h1>CPAQ</h1>
-                    <span>Conseil de Protection des Aînés du Québec</span>
+                    <span class="lang-option active" data-lang="fr">Conseil de Protection des Aînés du Québec</span>
+                    <span class="lang-option" data-lang="en">Quebec Council for Senior Protection</span>
                 </div>
             </div>
             <ul class="nav-links" id="primary-nav">
-                <li><a href="#accueil" class="nav-link active">Accueil</a></li>
-                <li><a href="#mission" class="nav-link">Mission</a></li>
-                <li><a href="#services" class="nav-link">Services</a></li>
-                <li><a href="#prevention" class="nav-link">Prévention</a></li>
-                <li><a href="#partenaires" class="nav-link">Partenaires</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#accueil" class="nav-link active">
+                    <span class="lang-option active" data-lang="fr">Accueil</span>
+                    <span class="lang-option" data-lang="en">Home</span>
+                </a></li>
+                <li><a href="#mission" class="nav-link">
+                    <span class="lang-option active" data-lang="fr">Mission</span>
+                    <span class="lang-option" data-lang="en">Mission</span>
+                </a></li>
+                <li><a href="#services" class="nav-link">
+                    <span class="lang-option active" data-lang="fr">Services</span>
+                    <span class="lang-option" data-lang="en">Services</span>
+                </a></li>
+                <li><a href="#prevention" class="nav-link">
+                    <span class="lang-option active" data-lang="fr">Prévention</span>
+                    <span class="lang-option" data-lang="en">Prevention</span>
+                </a></li>
+                <li><a href="#partenaires" class="nav-link">
+                    <span class="lang-option active" data-lang="fr">Partenaires</span>
+                    <span class="lang-option" data-lang="en">Partners</span>
+                </a></li>
+                <li><a href="#contact" class="nav-link">
+                    <span class="lang-option active" data-lang="fr">Contact</span>
+                    <span class="lang-option" data-lang="en">Contact</span>
+                </a></li>
             </ul>
             <div class="nav-actions">
-                <button class="lang-toggle" aria-label="Changer de langue">
+                <button class="lang-toggle" id="langToggle" aria-label="Changer de langue">
                     <span>FR</span>
                     <i class="fas fa-chevron-down"></i>
                 </button>
@@ -851,23 +894,38 @@
         <div class="container hero-inner">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1 class="hero-title">Protéger nos <span class="highlight">aînés</span> contre la fraude</h1>
+                    <h1 class="hero-title">
+                        <span class="lang-option active" data-lang="fr">Protéger nos <span class="highlight">aînés</span> contre la fraude</span>
+                        <span class="lang-option" data-lang="en">Protecting our <span class="highlight">seniors</span> from fraud</span>
+                    </h1>
                     <p class="hero-description">
-                        Le cours de l'année suivant le cours de l'Année suivant est remarqué :
+                        <span class="lang-option active" data-lang="fr">Le cours de l'année suivant le cours de l'Année suivant est remarqué :</span>
+                        <span class="lang-option" data-lang="en">The course of the year following the course of the Year following is noted:</span>
                     </p>
                     <ul class="hero-badges">
-                        <li class="badge"><i class="fas fa-shield-alt"></i> Les réseaux de la sécurité</li>
-                        <li class="badge"><i class="fas fa-user-friends"></i> Les démarches et autres des amis</li>
-                        <li class="badge"><i class="fas fa-network-wired"></i> Les réseaux de la sécurité</li>
+                        <li class="badge"><i class="fas fa-shield-alt"></i> 
+                            <span class="lang-option active" data-lang="fr">Les réseaux de la sécurité</span>
+                            <span class="lang-option" data-lang="en">Security networks</span>
+                        </li>
+                        <li class="badge"><i class="fas fa-user-friends"></i> 
+                            <span class="lang-option active" data-lang="fr">Les démarches et autres des amis</span>
+                            <span class="lang-option" data-lang="en">Procedures and friends</span>
+                        </li>
+                        <li class="badge"><i class="fas fa-network-wired"></i> 
+                            <span class="lang-option active" data-lang="fr">Les réseaux de la sécurité</span>
+                            <span class="lang-option" data-lang="en">Security networks</span>
+                        </li>
                     </ul>
                     <div class="hero-actions">
                         <a href="#contact" class="btn btn-primary">
                             <i class="fas fa-hand-holding-heart"></i>
-                            Nous Soutenir
+                            <span class="lang-option active" data-lang="fr">Nous Soutenir</span>
+                            <span class="lang-option" data-lang="en">Support Us</span>
                         </a>
                         <a href="#prevention" class="btn btn-secondary">
                             <i class="fas fa-shield-alt"></i>
-                            Conseils de Prévention
+                            <span class="lang-option active" data-lang="fr">Conseils de Prévention</span>
+                            <span class="lang-option" data-lang="en">Prevention Tips</span>
                         </a>
                     </div>
                 </div>
@@ -876,15 +934,27 @@
                         <div class="card-icon">
                             <i class="fas fa-user-shield"></i>
                         </div>
-                        <h3>Protection Immédiate</h3>
-                        <p>Ligne d'assistance disponible 5j/7 pour les aînés victimes de fraude</p>
+                        <h3>
+                            <span class="lang-option active" data-lang="fr">Protection Immédiate</span>
+                            <span class="lang-option" data-lang="en">Immediate Protection</span>
+                        </h3>
+                        <p>
+                            <span class="lang-option active" data-lang="fr">Ligne d'assistance disponible 5j/7 pour les aînés victimes de fraude</span>
+                            <span class="lang-option" data-lang="en">Assistance line available 5 days/week for seniors victims of fraud</span>
+                        </p>
                         <div class="emergency-contact">
                             <i class="fas fa-phone"></i>
                             <span>1-800-123-4567</span>
                         </div>
                         <div class="trust-marks">
-                            <span><i class="fas fa-lock"></i> Données sécurisées</span>
-                            <span><i class="fas fa-bolt"></i> Réponse rapide</span>
+                            <span><i class="fas fa-lock"></i> 
+                                <span class="lang-option active" data-lang="fr">Données sécurisées</span>
+                                <span class="lang-option" data-lang="en">Secure data</span>
+                            </span>
+                            <span><i class="fas fa-bolt"></i> 
+                                <span class="lang-option active" data-lang="fr">Réponse rapide</span>
+                                <span class="lang-option" data-lang="en">Quick response</span>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -898,19 +968,31 @@
             <div class="stats-grid">
                 <div class="stat-card">
                     <div class="stat-value" data-count="1500">0</div>
-                    <div class="stat-label">Aînés protégés</div>
+                    <div class="stat-label">
+                        <span class="lang-option active" data-lang="fr">Aînés protégés</span>
+                        <span class="lang-option" data-lang="en">Seniors protected</span>
+                    </div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-value" data-count="85">0</div>
-                    <div class="stat-label">Cas résolus</div>
+                    <div class="stat-label">
+                        <span class="lang-option active" data-lang="fr">Cas résolus</span>
+                        <span class="lang-option" data-lang="en">Cases resolved</span>
+                    </div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-value" data-count="42">0</div>
-                    <div class="stat-label">Partenaires</div>
+                    <div class="stat-label">
+                        <span class="lang-option active" data-lang="fr">Partenaires</span>
+                        <span class="lang-option" data-lang="en">Partners</span>
+                    </div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-value" data-count="7">0</div>
-                    <div class="stat-label">Ans d'expérience</div>
+                    <div class="stat-label">
+                        <span class="lang-option active" data-lang="fr">Ans d'expérience</span>
+                        <span class="lang-option" data-lang="en">Years of experience</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -920,31 +1002,56 @@
     <section id="mission" class="section">
         <div class="container">
             <div class="section-header">
-                <span class="section-eyebrow">Notre Mission</span>
-                <h2>Protéger et soutenir nos aînés</h2>
-                <p>Notre engagement envers la sécurité financière des personnes âgées</p>
+                <span class="section-eyebrow">
+                    <span class="lang-option active" data-lang="fr">Notre Mission</span>
+                    <span class="lang-option" data-lang="en">Our Mission</span>
+                </span>
+                <h2>
+                    <span class="lang-option active" data-lang="fr">Protéger et soutenir nos aînés</span>
+                    <span class="lang-option" data-lang="en">Protecting and supporting our seniors</span>
+                </h2>
+                <p>
+                    <span class="lang-option active" data-lang="fr">Notre engagement envers la sécurité financière des personnes âgées</span>
+                    <span class="lang-option" data-lang="en">Our commitment to financial security for the elderly</span>
+                </p>
             </div>
             <div class="prevention-content">
                 <div>
-                    <p>Le Conseil de Protection des Aînés du Québec (CPAQ) est un organisme à but non lucratif dédié à la protection, l'information et le soutien des aînés face aux fraudes et aux abus financiers.</p>
-                    <p>Notre mission est de créer un environnement sécurisé où les aînés peuvent vivre sans craindre les escroqueries financières qui les ciblent de plus en plus.</p>
+                    <p>
+                        <span class="lang-option active" data-lang="fr">Le Conseil de Protection des Aînés du Québec (CPAQ) est un organisme à but non lucratif dédié à la protection, l'information et le soutien des aînés face aux fraudes et aux abus financiers.</span>
+                        <span class="lang-option" data-lang="en">The Quebec Council for Senior Protection (CPAQ) is a non-profit organization dedicated to protecting, informing and supporting seniors against fraud and financial abuse.</span>
+                    </p>
+                    <p>
+                        <span class="lang-option active" data-lang="fr">Notre mission est de créer un environnement sécurisé où les aînés peuvent vivre sans craindre les escroqueries financières qui les ciblent de plus en plus.</span>
+                        <span class="lang-option" data-lang="en">Our mission is to create a safe environment where seniors can live without fear of the financial scams that increasingly target them.</span>
+                    </p>
                     <div class="hero-actions" style="margin-top: 32px;">
                         <a href="#contact" class="btn btn-primary">
                             <i class="fas fa-info-circle"></i>
-                            En savoir plus
+                            <span class="lang-option active" data-lang="fr">En savoir plus</span>
+                            <span class="lang-option" data-lang="en">Learn more</span>
                         </a>
                     </div>
                 </div>
                 <div class="glass-card" style="padding: 40px;">
-                    <h3 style="margin-bottom: 24px;">Nos valeurs</h3>
+                    <h3 style="margin-bottom: 24px;">
+                        <span class="lang-option active" data-lang="fr">Nos valeurs</span>
+                        <span class="lang-option" data-lang="en">Our values</span>
+                    </h3>
                     <div class="prevention-list">
                         <div class="prevention-item">
                             <div class="prevention-icon">
                                 <i class="fas fa-heart"></i>
                             </div>
                             <div class="prevention-text">
-                                <h4>Respect</h4>
-                                <p>Nous traitons chaque aîné avec dignité et respect.</p>
+                                <h4>
+                                    <span class="lang-option active" data-lang="fr">Respect</span>
+                                    <span class="lang-option" data-lang="en">Respect</span>
+                                </h4>
+                                <p>
+                                    <span class="lang-option active" data-lang="fr">Nous traitons chaque aîné avec dignité et respect.</span>
+                                    <span class="lang-option" data-lang="en">We treat every senior with dignity and respect.</span>
+                                </p>
                             </div>
                         </div>
                         <div class="prevention-item">
@@ -952,8 +1059,14 @@
                                 <i class="fas fa-shield-alt"></i>
                             </div>
                             <div class="prevention-text">
-                                <h4>Protection</h4>
-                                <p>Notre priorité est la sécurité financière des aînés.</p>
+                                <h4>
+                                    <span class="lang-option active" data-lang="fr">Protection</span>
+                                    <span class="lang-option" data-lang="en">Protection</span>
+                                </h4>
+                                <p>
+                                    <span class="lang-option active" data-lang="fr">Notre priorité est la sécurité financière des aînés.</span>
+                                    <span class="lang-option" data-lang="en">Our priority is the financial security of seniors.</span>
+                                </p>
                             </div>
                         </div>
                         <div class="prevention-item">
@@ -961,8 +1074,14 @@
                                 <i class="fas fa-handshake"></i>
                             </div>
                             <div class="prevention-text">
-                                <h4>Collaboration</h4>
-                                <p>Nous travaillons avec des partenaires pour maximiser notre impact.</p>
+                                <h4>
+                                    <span class="lang-option active" data-lang="fr">Collaboration</span>
+                                    <span class="lang-option" data-lang="en">Collaboration</span>
+                                </h4>
+                                <p>
+                                    <span class="lang-option active" data-lang="fr">Nous travaillons avec des partenaires pour maximiser notre impact.</span>
+                                    <span class="lang-option" data-lang="en">We work with partners to maximize our impact.</span>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -975,31 +1094,58 @@
     <section id="services" class="section" style="background: rgba(0, 10, 30, 0.4);">
         <div class="container">
             <div class="section-header">
-                <span class="section-eyebrow">Nos Services</span>
-                <h2>Comment nous aidons les aînés</h2>
-                <p>Des services complets pour protéger contre la fraude</p>
+                <span class="section-eyebrow">
+                    <span class="lang-option active" data-lang="fr">Nos Services</span>
+                    <span class="lang-option" data-lang="en">Our Services</span>
+                </span>
+                <h2>
+                    <span class="lang-option active" data-lang="fr">Comment nous aidons les aînés</span>
+                    <span class="lang-option" data-lang="en">How we help seniors</span>
+                </h2>
+                <p>
+                    <span class="lang-option active" data-lang="fr">Des services complets pour protéger contre la fraude</span>
+                    <span class="lang-option" data-lang="en">Comprehensive services to protect against fraud</span>
+                </p>
             </div>
             <div class="services-grid">
                 <div class="glass-card service-card">
                     <div class="service-icon">
                         <i class="fas fa-phone-volume"></i>
                     </div>
-                    <h3>Ligne d'assistance</h3>
-                    <p>Assistance téléphonique gratuite pour signaler des fraudes et obtenir des conseils.</p>
+                    <h3>
+                        <span class="lang-option active" data-lang="fr">Ligne d'assistance</span>
+                        <span class="lang-option" data-lang="en">Helpline</span>
+                    </h3>
+                    <p>
+                        <span class="lang-option active" data-lang="fr">Assistance téléphonique gratuite pour signaler des fraudes et obtenir des conseils.</span>
+                        <span class="lang-option" data-lang="en">Free telephone assistance to report fraud and get advice.</span>
+                    </p>
                 </div>
                 <div class="glass-card service-card">
                     <div class="service-icon">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
-                    <h3>Ateliers éducatifs</h3>
-                    <p>Sessions de formation pour reconnaître et prévenir les fraudes courantes.</p>
+                    <h3>
+                        <span class="lang-option active" data-lang="fr">Ateliers éducatifs</span>
+                        <span class="lang-option" data-lang="en">Educational workshops</span>
+                    </h3>
+                    <p>
+                        <span class="lang-option active" data-lang="fr">Sessions de formation pour reconnaître et prévenir les fraudes courantes.</span>
+                        <span class="lang-option" data-lang="en">Training sessions to recognize and prevent common frauds.</span>
+                    </p>
                 </div>
                 <div class="glass-card service-card">
                     <div class="service-icon">
                         <i class="fas fa-hands-helping"></i>
                     </div>
-                    <h3>Accompagnement</h3>
-                    <p>Soutien personnalisé pour les victimes de fraude tout au long du processus.</p>
+                    <h3>
+                        <span class="lang-option active" data-lang="fr">Accompagnement</span>
+                        <span class="lang-option" data-lang="en">Support</span>
+                    </h3>
+                    <p>
+                        <span class="lang-option active" data-lang="fr">Soutien personnalisé pour les victimes de fraude tout au long du processus.</span>
+                        <span class="lang-option" data-lang="en">Personalized support for fraud victims throughout the process.</span>
+                    </p>
                 </div>
             </div>
         </div>
@@ -1009,9 +1155,18 @@
     <section id="prevention" class="section">
         <div class="container">
             <div class="section-header">
-                <span class="section-eyebrow">Prévention</span>
-                <h2>Conseils pour se protéger</h2>
-                <p>Reconnaître et éviter les fraudes courantes</p>
+                <span class="section-eyebrow">
+                    <span class="lang-option active" data-lang="fr">Prévention</span>
+                    <span class="lang-option" data-lang="en">Prevention</span>
+                </span>
+                <h2>
+                    <span class="lang-option active" data-lang="fr">Conseils pour se protéger</span>
+                    <span class="lang-option" data-lang="en">Tips to protect yourself</span>
+                </h2>
+                <p>
+                    <span class="lang-option active" data-lang="fr">Reconnaître et éviter les fraudes courantes</span>
+                    <span class="lang-option" data-lang="en">Recognize and avoid common frauds</span>
+                </p>
             </div>
             <div class="prevention-content">
                 <div>
@@ -1021,8 +1176,14 @@
                                 <i class="fas fa-phone-slash"></i>
                             </div>
                             <div class="prevention-text">
-                                <h4>Appels suspects</h4>
-                                <p>Ne donnez jamais d'informations personnelles par téléphone à des inconnus.</p>
+                                <h4>
+                                    <span class="lang-option active" data-lang="fr">Appels suspects</span>
+                                    <span class="lang-option" data-lang="en">Suspicious calls</span>
+                                </h4>
+                                <p>
+                                    <span class="lang-option active" data-lang="fr">Ne donnez jamais d'informations personnelles par téléphone à des inconnus.</span>
+                                    <span class="lang-option" data-lang="en">Never give personal information over the phone to strangers.</span>
+                                </p>
                             </div>
                         </div>
                         <div class="prevention-item">
@@ -1030,8 +1191,14 @@
                                 <i class="fas fa-envelope"></i>
                             </div>
                             <div class="prevention-text">
-                                <h4>Courriels frauduleux</h4>
-                                <p>Méfiez-vous des courriels demandant des informations personnelles ou financières.</p>
+                                <h4>
+                                    <span class="lang-option active" data-lang="fr">Courriels frauduleux</span>
+                                    <span class="lang-option" data-lang="en">Fraudulent emails</span>
+                                </h4>
+                                <p>
+                                    <span class="lang-option active" data-lang="fr">Méfiez-vous des courriels demandant des informations personnelles ou financières.</span>
+                                    <span class="lang-option" data-lang="en">Be wary of emails requesting personal or financial information.</span>
+                                </p>
                             </div>
                         </div>
                         <div class="prevention-item">
@@ -1039,8 +1206,14 @@
                                 <i class="fas fa-user-secret"></i>
                             </div>
                             <div class="prevention-text">
-                                <h4>Arnaques relationnelles</h4>
-                                <p>Soyez prudent avec les nouvelles relations en ligne qui demandent de l'argent.</p>
+                                <h4>
+                                    <span class="lang-option active" data-lang="fr">Arnaques relationnelles</span>
+                                    <span class="lang-option" data-lang="en">Relationship scams</span>
+                                </h4>
+                                <p>
+                                    <span class="lang-option active" data-lang="fr">Soyez prudent avec les nouvelles relations en ligne qui demandent de l'argent.</span>
+                                    <span class="lang-option" data-lang="en">Be cautious with new online relationships that ask for money.</span>
+                                </p>
                             </div>
                         </div>
                         <div class="prevention-item">
@@ -1048,20 +1221,35 @@
                                 <i class="fas fa-file-invoice-dollar"></i>
                             </div>
                             <div class="prevention-text">
-                                <h4>Fausses factures</h4>
-                                <p>Vérifiez toujours l'authenticité des factures avant de payer.</p>
+                                <h4>
+                                    <span class="lang-option active" data-lang="fr">Fausses factures</span>
+                                    <span class="lang-option" data-lang="en">Fake invoices</span>
+                                </h4>
+                                <p>
+                                    <span class="lang-option active" data-lang="fr">Vérifiez toujours l'authenticité des factures avant de payer.</span>
+                                    <span class="lang-option" data-lang="en">Always verify the authenticity of invoices before paying.</span>
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="glass-card" style="padding: 40px; text-align: center;">
-                    <h3 style="margin-bottom: 16px;">Urgence Fraude?</h3>
-                    <p style="margin-bottom: 24px; color: var(--muted);">Si vous pensez être victime d'une fraude, contactez-nous immédiatement.</p>
+                    <h3 style="margin-bottom: 16px;">
+                        <span class="lang-option active" data-lang="fr">Urgence Fraude?</span>
+                        <span class="lang-option" data-lang="en">Fraud Emergency?</span>
+                    </h3>
+                    <p style="margin-bottom: 24px; color: var(--muted);">
+                        <span class="lang-option active" data-lang="fr">Si vous pensez être victime d'une fraude, contactez-nous immédiatement.</span>
+                        <span class="lang-option" data-lang="en">If you think you are a victim of fraud, contact us immediately.</span>
+                    </p>
                     <div class="emergency-contact" style="justify-content: center; margin-bottom: 24px;">
                         <i class="fas fa-phone"></i>
                         <span>1-800-123-4567</span>
                     </div>
-                    <p style="font-size: 0.9rem; color: var(--muted);">Ligne disponible du lundi au vendredi, 9h à 17h</p>
+                    <p style="font-size: 0.9rem; color: var(--muted);">
+                        <span class="lang-option active" data-lang="fr">Ligne disponible du lundi au vendredi, 9h à 17h</span>
+                        <span class="lang-option" data-lang="en">Line available Monday to Friday, 9am to 5pm</span>
+                    </p>
                 </div>
             </div>
         </div>
@@ -1071,9 +1259,18 @@
     <section id="partenaires" class="section" style="background: rgba(0, 10, 30, 0.4);">
         <div class="container">
             <div class="section-header">
-                <span class="section-eyebrow">Partenaires</span>
-                <h2>Ils nous font confiance</h2>
-                <p>Des organisations engagées dans la protection des aînés</p>
+                <span class="section-eyebrow">
+                    <span class="lang-option active" data-lang="fr">Partenaires</span>
+                    <span class="lang-option" data-lang="en">Partners</span>
+                </span>
+                <h2>
+                    <span class="lang-option active" data-lang="fr">Ils nous font confiance</span>
+                    <span class="lang-option" data-lang="en">They trust us</span>
+                </h2>
+                <p>
+                    <span class="lang-option active" data-lang="fr">Des organisations engagées dans la protection des aînés</span>
+                    <span class="lang-option" data-lang="en">Organizations committed to protecting seniors</span>
+                </p>
             </div>
             <div class="partners-grid">
                 <div class="partner-logo">
@@ -1096,9 +1293,18 @@
     <section id="contact" class="section">
         <div class="container">
             <div class="section-header">
-                <span class="section-eyebrow">Contact</span>
-                <h2>Restons en contact</h2>
-                <p>Nous sommes là pour répondre à vos questions</p>
+                <span class="section-eyebrow">
+                    <span class="lang-option active" data-lang="fr">Contact</span>
+                    <span class="lang-option" data-lang="en">Contact</span>
+                </span>
+                <h2>
+                    <span class="lang-option active" data-lang="fr">Restons en contact</span>
+                    <span class="lang-option" data-lang="en">Let's stay in touch</span>
+                </h2>
+                <p>
+                    <span class="lang-option active" data-lang="fr">Nous sommes là pour répondre à vos questions</span>
+                    <span class="lang-option" data-lang="en">We're here to answer your questions</span>
+                </p>
             </div>
             <div class="contact-content">
                 <div class="contact-info">
@@ -1107,7 +1313,10 @@
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div class="contact-details">
-                            <h4>Adresse</h4>
+                            <h4>
+                                <span class="lang-option active" data-lang="fr">Adresse</span>
+                                <span class="lang-option" data-lang="en">Address</span>
+                            </h4>
                             <p>1234 Rue de la Sécurité<br>Montréal, QC H3A 1A1</p>
                         </div>
                     </div>
@@ -1116,8 +1325,14 @@
                             <i class="fas fa-phone"></i>
                         </div>
                         <div class="contact-details">
-                            <h4>Téléphone</h4>
-                            <p>1-800-123-4567<br>Lun-Ven: 9h-17h</p>
+                            <h4>
+                                <span class="lang-option active" data-lang="fr">Téléphone</span>
+                                <span class="lang-option" data-lang="en">Phone</span>
+                            </h4>
+                            <p>1-800-123-4567<br>
+                                <span class="lang-option active" data-lang="fr">Lun-Ven: 9h-17h</span>
+                                <span class="lang-option" data-lang="en">Mon-Fri: 9am-5pm</span>
+                            </p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -1130,35 +1345,55 @@
                         </div>
                     </div>
                     <div class="glass-card" style="padding: 32px;">
-                        <h4 style="margin-bottom: 16px;">Urgence</h4>
-                        <p style="color: var(--muted); margin-bottom: 16px;">En cas d'urgence ou de fraude en cours, contactez-nous immédiatement.</p>
+                        <h4 style="margin-bottom: 16px;">
+                            <span class="lang-option active" data-lang="fr">Urgence</span>
+                            <span class="lang-option" data-lang="en">Emergency</span>
+                        </h4>
+                        <p style="color: var(--muted); margin-bottom: 16px;">
+                            <span class="lang-option active" data-lang="fr">En cas d'urgence ou de fraude en cours, contactez-nous immédiatement.</span>
+                            <span class="lang-option" data-lang="en">In case of emergency or ongoing fraud, contact us immediately.</span>
+                        </p>
                         <a href="tel:1-800-123-4567" class="btn btn-primary" style="width: 100%; justify-content: center;">
                             <i class="fas fa-phone"></i>
-                            Appeler maintenant
+                            <span class="lang-option active" data-lang="fr">Appeler maintenant</span>
+                            <span class="lang-option" data-lang="en">Call now</span>
                         </a>
                     </div>
                 </div>
                 <div class="glass-card">
                     <form class="contact-form" id="contactForm">
                         <div class="form-group">
-                            <label for="name">Nom complet</label>
+                            <label for="name">
+                                <span class="lang-option active" data-lang="fr">Nom complet</span>
+                                <span class="lang-option" data-lang="en">Full name</span>
+                            </label>
                             <input type="text" id="name" name="name" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">Adresse email</label>
+                            <label for="email">
+                                <span class="lang-option active" data-lang="fr">Adresse email</span>
+                                <span class="lang-option" data-lang="en">Email address</span>
+                            </label>
                             <input type="email" id="email" name="email" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label for="subject">Sujet</label>
+                            <label for="subject">
+                                <span class="lang-option active" data-lang="fr">Sujet</span>
+                                <span class="lang-option" data-lang="en">Subject</span>
+                            </label>
                             <input type="text" id="subject" name="subject" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label for="message">Message</label>
+                            <label for="message">
+                                <span class="lang-option active" data-lang="fr">Message</span>
+                                <span class="lang-option" data-lang="en">Message</span>
+                            </label>
                             <textarea id="message" name="message" class="form-control" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">
                             <i class="fas fa-paper-plane"></i>
-                            Envoyer le message
+                            <span class="lang-option active" data-lang="fr">Envoyer le message</span>
+                            <span class="lang-option" data-lang="en">Send message</span>
                         </button>
                         <div class="form-status"></div>
                     </form>
@@ -1176,10 +1411,16 @@
                         <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMTAiIGZpbGw9IiMwZjY4ZDciLz4KPHN2ZyB4PSIxNSIgeT0iMTUiIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj4KPHBhdGggZD0iTTEyIDIyQzE3LjUyMiAyMiAyMiAxNy41MjIgMjIgMTJDMjIgNi40Nzc4IDE3LjUyMiAyIDEyIDJDNi40Nzc4IDIgMiA2LjQ3NzggMiAxMkMyIDE3LjUyMiA2LjQ3NzggMjIgMTIgMjJaIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiLz4KPHBhdGggZD0iTTEyIDE2VjEyIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiLz4KPHBhdGggZD0iTTEyIDhWOC4wMSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIi8+Cjwvc3ZnPgo8L3N2Zz4K" alt="Logo CPAQ">
                         <div class="footer-logo-text">
                             <h3>CPAQ</h3>
-                            <p>Conseil de Protection des Aînés du Québec</p>
+                            <p>
+                                <span class="lang-option active" data-lang="fr">Conseil de Protection des Aînés du Québec</span>
+                                <span class="lang-option" data-lang="en">Quebec Council for Senior Protection</span>
+                            </p>
                         </div>
                     </div>
-                    <p class="footer-description">Organisme à but non lucratif dédié à la protection des aînés contre la fraude et les abus financiers.</p>
+                    <p class="footer-description">
+                        <span class="lang-option active" data-lang="fr">Organisme à but non lucratif dédié à la protection des aînés contre la fraude et les abus financiers.</span>
+                        <span class="lang-option" data-lang="en">Non-profit organization dedicated to protecting seniors from fraud and financial abuse.</span>
+                    </p>
                     <div class="footer-social">
                         <a href="#" class="social-link" aria-label="Facebook">
                             <i class="fab fa-facebook-f"></i>
@@ -1196,43 +1437,135 @@
                     </div>
                 </div>
                 <div>
-                    <h4 class="footer-heading">Liens rapides</h4>
+                    <h4 class="footer-heading">
+                        <span class="lang-option active" data-lang="fr">Liens rapides</span>
+                        <span class="lang-option" data-lang="en">Quick links</span>
+                    </h4>
                     <ul class="footer-links">
-                        <li><a href="#accueil" class="footer-link">Accueil</a></li>
-                        <li><a href="#mission" class="footer-link">Notre mission</a></li>
-                        <li><a href="#services" class="footer-link">Services</a></li>
-                        <li><a href="#prevention" class="footer-link">Prévention</a></li>
-                        <li><a href="#contact" class="footer-link">Contact</a></li>
+                        <li><a href="#accueil" class="footer-link">
+                            <span class="lang-option active" data-lang="fr">Accueil</span>
+                            <span class="lang-option" data-lang="en">Home</span>
+                        </a></li>
+                        <li><a href="#mission" class="footer-link">
+                            <span class="lang-option active" data-lang="fr">Notre mission</span>
+                            <span class="lang-option" data-lang="en">Our mission</span>
+                        </a></li>
+                        <li><a href="#services" class="footer-link">
+                            <span class="lang-option active" data-lang="fr">Services</span>
+                            <span class="lang-option" data-lang="en">Services</span>
+                        </a></li>
+                        <li><a href="#prevention" class="footer-link">
+                            <span class="lang-option active" data-lang="fr">Prévention</span>
+                            <span class="lang-option" data-lang="en">Prevention</span>
+                        </a></li>
+                        <li><a href="#contact" class="footer-link">
+                            <span class="lang-option active" data-lang="fr">Contact</span>
+                            <span class="lang-option" data-lang="en">Contact</span>
+                        </a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="footer-heading">Ressources</h4>
+                    <h4 class="footer-heading">
+                        <span class="lang-option active" data-lang="fr">Ressources</span>
+                        <span class="lang-option" data-lang="en">Resources</span>
+                    </h4>
                     <ul class="footer-links">
-                        <li><a href="#" class="footer-link">Guides de prévention</a></li>
-                        <li><a href="#" class="footer-link">Signaler une fraude</a></li>
-                        <li><a href="#" class="footer-link">Témoignages</a></li>
-                        <li><a href="#" class="footer-link">FAQ</a></li>
-                        <li><a href="#" class="footer-link">Blog</a></li>
+                        <li><a href="#" class="footer-link">
+                            <span class="lang-option active" data-lang="fr">Guides de prévention</span>
+                            <span class="lang-option" data-lang="en">Prevention guides</span>
+                        </a></li>
+                        <li><a href="#" class="footer-link">
+                            <span class="lang-option active" data-lang="fr">Signaler une fraude</span>
+                            <span class="lang-option" data-lang="en">Report fraud</span>
+                        </a></li>
+                        <li><a href="#" class="footer-link">
+                            <span class="lang-option active" data-lang="fr">Témoignages</span>
+                            <span class="lang-option" data-lang="en">Testimonials</span>
+                        </a></li>
+                        <li><a href="#" class="footer-link">
+                            <span class="lang-option active" data-lang="fr">FAQ</span>
+                            <span class="lang-option" data-lang="en">FAQ</span>
+                        </a></li>
+                        <li><a href="#" class="footer-link">
+                            <span class="lang-option active" data-lang="fr">Blog</span>
+                            <span class="lang-option" data-lang="en">Blog</span>
+                        </a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="footer-heading">Légal</h4>
+                    <h4 class="footer-heading">
+                        <span class="lang-option active" data-lang="fr">Légal</span>
+                        <span class="lang-option" data-lang="en">Legal</span>
+                    </h4>
                     <ul class="footer-links">
-                        <li><a href="#" class="footer-link">Mentions légales</a></li>
-                        <li><a href="#" class="footer-link">Politique de confidentialité</a></li>
-                        <li><a href="#" class="footer-link">Conditions d'utilisation</a></li>
-                        <li><a href="#" class="footer-link">Accessibilité</a></li>
+                        <li><a href="#" class="footer-link">
+                            <span class="lang-option active" data-lang="fr">Mentions légales</span>
+                            <span class="lang-option" data-lang="en">Legal notice</span>
+                        </a></li>
+                        <li><a href="#" class="footer-link">
+                            <span class="lang-option active" data-lang="fr">Politique de confidentialité</span>
+                            <span class="lang-option" data-lang="en">Privacy policy</span>
+                        </a></li>
+                        <li><a href="#" class="footer-link">
+                            <span class="lang-option active" data-lang="fr">Conditions d'utilisation</span>
+                            <span class="lang-option" data-lang="en">Terms of use</span>
+                        </a></li>
+                        <li><a href="#" class="footer-link">
+                            <span class="lang-option active" data-lang="fr">Accessibilité</span>
+                            <span class="lang-option" data-lang="en">Accessibility</span>
+                        </a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p class="copyright">Conception : © Sande D'Ocques</p>
-                <p>&copy; 2023 CPAQ - Conseil de Protection des Aînés du Québec. Tous droits réservés.</p>
+                <p>
+                    <span class="lang-option active" data-lang="fr">&copy; 2023 CPAQ - Conseil de Protection des Aînés du Québec. Tous droits réservés.</span>
+                    <span class="lang-option" data-lang="en">&copy; 2023 CPAQ - Quebec Council for Senior Protection. All rights reserved.</span>
+                </p>
             </div>
         </div>
     </footer>
 
     <script>
+        // Language Toggle Functionality
+        const langToggle = document.getElementById('langToggle');
+        let currentLang = 'fr';
+
+        const toggleLanguage = () => {
+            currentLang = currentLang === 'fr' ? 'en' : 'fr';
+            
+            // Update all language-specific elements
+            document.querySelectorAll('.lang-option').forEach(element => {
+                if (element.getAttribute('data-lang') === currentLang) {
+                    element.classList.add('active');
+                } else {
+                    element.classList.remove('active');
+                }
+            });
+            
+            // Update language toggle button
+            const toggleText = langToggle.querySelector('span');
+            toggleText.textContent = currentLang.toUpperCase();
+            
+            // Update page title
+            document.title = currentLang === 'fr' 
+                ? 'CPAQ - Protéger nos aînés contre la fraude' 
+                : 'CPAQ - Protecting our seniors from fraud';
+                
+            // Update HTML lang attribute
+            document.documentElement.lang = currentLang;
+            
+            // Update skip link
+            const skipLink = document.querySelector('.skip-link');
+            skipLink.textContent = currentLang === 'fr' 
+                ? 'Passer au contenu principal' 
+                : 'Skip to main content';
+            skipLink.href = currentLang === 'fr' ? '#accueil' : '#home';
+        };
+
+        langToggle.addEventListener('click', toggleLanguage);
+
         // Navigation
         const navToggle = document.querySelector('.nav-toggle');
         const navLinks = document.querySelector('.nav-links');
@@ -1241,7 +1574,9 @@
         const setNavState = isOpen => {
             navLinks?.classList.toggle('open', isOpen);
             navToggle?.setAttribute('aria-expanded', String(isOpen));
-            navToggle?.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+            navToggle?.setAttribute('aria-label', isOpen ? 
+                (currentLang === 'fr' ? 'Fermer le menu' : 'Close menu') : 
+                (currentLang === 'fr' ? 'Ouvrir le menu' : 'Open menu'));
         };
 
         const toggleNav = () => {
@@ -1337,19 +1672,25 @@
             const message = form.message.value.trim();
 
             if (!name || !email || !subject || !message) {
-                formStatus.textContent = 'Merci de remplir tous les champs.';
+                formStatus.textContent = currentLang === 'fr' 
+                    ? 'Merci de remplir tous les champs.' 
+                    : 'Please fill in all fields.';
                 formStatus.style.color = '#ffcc80';
                 return;
             }
 
             if (!validateEmail(email)) {
-                formStatus.textContent = 'Veuillez saisir un courriel valide.';
+                formStatus.textContent = currentLang === 'fr' 
+                    ? 'Veuillez saisir un courriel valide.' 
+                    : 'Please enter a valid email address.';
                 formStatus.style.color = '#ffcc80';
                 return;
             }
 
             // Success
-            formStatus.textContent = 'Message envoyé! Nous vous répondrons rapidement.';
+            formStatus.textContent = currentLang === 'fr' 
+                ? 'Message envoyé! Nous vous répondrons rapidement.' 
+                : 'Message sent! We will respond quickly.';
             formStatus.style.color = '#90ee90';
 
             setTimeout(() => {
