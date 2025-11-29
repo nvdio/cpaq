@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CPAQ - Protéger nos aînés contre la fraude</title>
+    <title>Protéger nos aînés contre la fraude | Protecting our seniors from fraud</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -134,9 +134,15 @@
         }
 
         .logo-img {
-            width: 72px;
-            height: auto;
-            filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.35));
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: #4dd0e1;
+            font-size: 1.8rem;
         }
 
         .logo-text h1 {
@@ -503,6 +509,61 @@
             color: var(--muted);
         }
 
+        /* Process Section */
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .process-step {
+            display: flex;
+            gap: 24px;
+            padding: 32px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            border: 1px solid var(--card-border);
+            transition: transform 0.3s ease;
+        }
+
+        .process-step:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(77, 208, 225, 0.1);
+            border-radius: 50%;
+            color: #4dd0e1;
+            font-size: 1.5rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+
+        .step-content p {
+            color: var(--muted);
+            margin-bottom: 16px;
+        }
+
+        .step-details {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 16px;
+            border-radius: 12px;
+            border-left: 3px solid #4dd0e1;
+        }
+
         /* Prevention Section */
         .prevention-content {
             display: grid;
@@ -685,8 +746,10 @@
             margin-bottom: 20px;
         }
 
-        .footer-logo img {
-            width: 60px;
+        .footer-logo .logo-img {
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
         }
 
         .footer-logo-text h3 {
@@ -821,6 +884,11 @@
             .hero-actions {
                 flex-direction: column;
             }
+            
+            .process-step {
+                flex-direction: column;
+                text-align: center;
+            }
         }
 
         @media (max-width: 480px) {
@@ -838,11 +906,13 @@
     <nav class="glass-nav">
         <div class="nav-container">
             <div class="logo">
-                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzIiIGhlaWdodD0iNzIiIHZpZXdCb3g9IjAgMCA3MiA3MiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjcyIiBoZWlnaHQ9IjcyIiByeD0iMTIiIGZpbGw9IiMwZjY4ZDciLz4KPHN2ZyB4PSIxOCIgeT0iMTgiIHdpZHRoPSIzNiIgaGVpZ2h0PSIzNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj4KPHBhdGggZD0iTTEyIDIyQzE3LjUyMiAyMiAyMiAxNy41MjIgMjIgMTJDMjIgNi40Nzc4IDE3LjUyMiAyIDEyIDJDNi40Nzc4IDIgMiA2LjQ3NzggMiAxMkMyIDE3LjUyMiA2LjQ3NzggMjIgMTIgMjJaIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiLz4KPHBhdGggZD0iTTEyIDE2VjEyIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiLz4KPHBhdGggZD0iTTEyIDhWOC4wMSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIi8+Cjwvc3ZnPgo8L3N2Zz4K" alt="Logo CPAQ" class="logo-img">
+                <div class="logo-img">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
                 <div class="logo-text">
-                    <h1>CPAQ</h1>
-                    <span class="lang-option active" data-lang="fr">Conseil de Protection des Aînés du Québec</span>
-                    <span class="lang-option" data-lang="en">Quebec Council for Senior Protection</span>
+                    <h1>Protection Aînés Québec</h1>
+                    <span class="lang-option active" data-lang="fr">Organisme à but non lucratif</span>
+                    <span class="lang-option" data-lang="en">Non-profit organization</span>
                 </div>
             </div>
             <ul class="nav-links" id="primary-nav">
@@ -854,9 +924,9 @@
                     <span class="lang-option active" data-lang="fr">Mission</span>
                     <span class="lang-option" data-lang="en">Mission</span>
                 </a></li>
-                <li><a href="#services" class="nav-link">
-                    <span class="lang-option active" data-lang="fr">Services</span>
-                    <span class="lang-option" data-lang="en">Services</span>
+                <li><a href="#processus" class="nav-link">
+                    <span class="lang-option active" data-lang="fr">Processus</span>
+                    <span class="lang-option" data-lang="en">Process</span>
                 </a></li>
                 <li><a href="#prevention" class="nav-link">
                     <span class="lang-option active" data-lang="fr">Prévention</span>
@@ -899,23 +969,9 @@
                         <span class="lang-option" data-lang="en">Protecting our <span class="highlight">seniors</span> from fraud</span>
                     </h1>
                     <p class="hero-description">
-                        <span class="lang-option active" data-lang="fr">Le cours de l'année suivant le cours de l'Année suivant est remarqué :</span>
-                        <span class="lang-option" data-lang="en">The course of the year following the course of the Year following is noted:</span>
+                        <span class="lang-option active" data-lang="fr">Notre mission est de protéger les personnes âgées du Québec contre les différentes formes de fraude grâce à l'éducation, la prévention et le soutien.</span>
+                        <span class="lang-option" data-lang="en">Our mission is to protect seniors in Quebec from various forms of fraud through education, prevention, and support.</span>
                     </p>
-                    <ul class="hero-badges">
-                        <li class="badge"><i class="fas fa-shield-alt"></i> 
-                            <span class="lang-option active" data-lang="fr">Les réseaux de la sécurité</span>
-                            <span class="lang-option" data-lang="en">Security networks</span>
-                        </li>
-                        <li class="badge"><i class="fas fa-user-friends"></i> 
-                            <span class="lang-option active" data-lang="fr">Les démarches et autres des amis</span>
-                            <span class="lang-option" data-lang="en">Procedures and friends</span>
-                        </li>
-                        <li class="badge"><i class="fas fa-network-wired"></i> 
-                            <span class="lang-option active" data-lang="fr">Les réseaux de la sécurité</span>
-                            <span class="lang-option" data-lang="en">Security networks</span>
-                        </li>
-                    </ul>
                     <div class="hero-actions">
                         <a href="#contact" class="btn btn-primary">
                             <i class="fas fa-hand-holding-heart"></i>
@@ -927,6 +983,20 @@
                             <span class="lang-option active" data-lang="fr">Conseils de Prévention</span>
                             <span class="lang-option" data-lang="en">Prevention Tips</span>
                         </a>
+                    </div>
+                    <div class="hero-badges">
+                        <li class="badge"><i class="fas fa-check"></i> 
+                            <span class="lang-option active" data-lang="fr">Organisme à but non lucratif</span>
+                            <span class="lang-option" data-lang="en">Non-profit organization</span>
+                        </li>
+                        <li class="badge"><i class="fas fa-check"></i> 
+                            <span class="lang-option active" data-lang="fr">Services 5j/7</span>
+                            <span class="lang-option" data-lang="en">5 days/week services</span>
+                        </li>
+                        <li class="badge"><i class="fas fa-check"></i> 
+                            <span class="lang-option active" data-lang="fr">Partenariats certifiés</span>
+                            <span class="lang-option" data-lang="en">Certified partnerships</span>
+                        </li>
                     </div>
                 </div>
                 <div class="hero-visual">
@@ -1018,12 +1088,12 @@
             <div class="prevention-content">
                 <div>
                     <p>
-                        <span class="lang-option active" data-lang="fr">Le Conseil de Protection des Aînés du Québec (CPAQ) est un organisme à but non lucratif dédié à la protection, l'information et le soutien des aînés face aux fraudes et aux abus financiers.</span>
-                        <span class="lang-option" data-lang="en">The Quebec Council for Senior Protection (CPAQ) is a non-profit organization dedicated to protecting, informing and supporting seniors against fraud and financial abuse.</span>
+                        <span class="lang-option active" data-lang="fr">Notre mission est de protéger les aînés du Québec contre les différentes formes de fraude. Nous nous concentrons sur les personnes âgées vulnérables aux arnaques en ligne, téléphoniques et postales.</span>
+                        <span class="lang-option" data-lang="en">Our mission is to protect seniors in Quebec from various forms of fraud. We focus on elderly individuals vulnerable to online, phone, and postal scams.</span>
                     </p>
                     <p>
-                        <span class="lang-option active" data-lang="fr">Notre mission est de créer un environnement sécurisé où les aînés peuvent vivre sans craindre les escroqueries financières qui les ciblent de plus en plus.</span>
-                        <span class="lang-option" data-lang="en">Our mission is to create a safe environment where seniors can live without fear of the financial scams that increasingly target them.</span>
+                        <span class="lang-option active" data-lang="fr">Notre stratégie de communication inclut Facebook, où de nombreux aînés sont actifs, ainsi que des contenus éducatifs sur la prévention des fraudes par téléphone et courrier.</span>
+                        <span class="lang-option" data-lang="en">Our communication strategy includes Facebook, where many seniors are active, as well as educational content on preventing phone and mail scams.</span>
                     </p>
                     <div class="hero-actions" style="margin-top: 32px;">
                         <a href="#contact" class="btn btn-primary">
@@ -1090,62 +1160,125 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="section" style="background: rgba(0, 10, 30, 0.4);">
+    <!-- Process Section -->
+    <section id="processus" class="section" style="background: rgba(0, 10, 30, 0.4);">
         <div class="container">
             <div class="section-header">
                 <span class="section-eyebrow">
-                    <span class="lang-option active" data-lang="fr">Nos Services</span>
-                    <span class="lang-option" data-lang="en">Our Services</span>
+                    <span class="lang-option active" data-lang="fr">Notre Processus</span>
+                    <span class="lang-option" data-lang="en">Our Process</span>
                 </span>
                 <h2>
-                    <span class="lang-option active" data-lang="fr">Comment nous aidons les aînés</span>
-                    <span class="lang-option" data-lang="en">How we help seniors</span>
+                    <span class="lang-option active" data-lang="fr">Comment nous protégeons les aînés</span>
+                    <span class="lang-option" data-lang="en">How we protect seniors</span>
                 </h2>
                 <p>
-                    <span class="lang-option active" data-lang="fr">Des services complets pour protéger contre la fraude</span>
-                    <span class="lang-option" data-lang="en">Comprehensive services to protect against fraud</span>
+                    <span class="lang-option active" data-lang="fr">Une approche structurée pour prévenir la fraude</span>
+                    <span class="lang-option" data-lang="en">A structured approach to prevent fraud</span>
                 </p>
             </div>
-            <div class="services-grid">
-                <div class="glass-card service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-phone-volume"></i>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>
+                            <span class="lang-option active" data-lang="fr">Énoncé de mission</span>
+                            <span class="lang-option" data-lang="en">Mission Statement</span>
+                        </h3>
+                        <p>
+                            <span class="lang-option active" data-lang="fr">Définir l'objectif de notre organisme à but non lucratif : aider les aînés du Québec à éviter la fraude.</span>
+                            <span class="lang-option" data-lang="en">Define the purpose of our nonprofit: helping Quebec seniors avoid fraud.</span>
+                        </p>
+                        <div class="step-details">
+                            <span class="lang-option active" data-lang="fr">Protéger les personnes âgées contre les arnaques en ligne, téléphoniques et postales.</span>
+                            <span class="lang-option" data-lang="en">Protect seniors from online, phone, and postal scams.</span>
+                        </div>
                     </div>
-                    <h3>
-                        <span class="lang-option active" data-lang="fr">Ligne d'assistance</span>
-                        <span class="lang-option" data-lang="en">Helpline</span>
-                    </h3>
-                    <p>
-                        <span class="lang-option active" data-lang="fr">Assistance téléphonique gratuite pour signaler des fraudes et obtenir des conseils.</span>
-                        <span class="lang-option" data-lang="en">Free telephone assistance to report fraud and get advice.</span>
-                    </p>
                 </div>
-                <div class="glass-card service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-graduation-cap"></i>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>
+                            <span class="lang-option active" data-lang="fr">Public cible</span>
+                            <span class="lang-option" data-lang="en">Target Audience</span>
+                        </h3>
+                        <p>
+                            <span class="lang-option active" data-lang="fr">Identifier notre public : les aînés du Québec à risque de fraude.</span>
+                            <span class="lang-option" data-lang="en">Identify our audience: seniors in Quebec at risk of fraud.</span>
+                        </p>
+                        <div class="step-details">
+                            <span class="lang-option active" data-lang="fr">Personnes âgées vulnérables aux arnaques web, téléphoniques et postales.</span>
+                            <span class="lang-option" data-lang="en">Elderly individuals vulnerable to web, phone, and postal scams.</span>
+                        </div>
                     </div>
-                    <h3>
-                        <span class="lang-option active" data-lang="fr">Ateliers éducatifs</span>
-                        <span class="lang-option" data-lang="en">Educational workshops</span>
-                    </h3>
-                    <p>
-                        <span class="lang-option active" data-lang="fr">Sessions de formation pour reconnaître et prévenir les fraudes courantes.</span>
-                        <span class="lang-option" data-lang="en">Training sessions to recognize and prevent common frauds.</span>
-                    </p>
                 </div>
-                <div class="glass-card service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-hands-helping"></i>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>
+                            <span class="lang-option active" data-lang="fr">Stratégie de communication</span>
+                            <span class="lang-option" data-lang="en">Communication Strategy</span>
+                        </h3>
+                        <p>
+                            <span class="lang-option active" data-lang="fr">Atteindre notre public via Facebook et développer du contenu éducatif.</span>
+                            <span class="lang-option" data-lang="en">Reach our audience via Facebook and develop educational content.</span>
+                        </p>
+                        <div class="step-details">
+                            <span class="lang-option active" data-lang="fr">Utiliser Facebook (beaucoup d'aînés y sont actifs) et créer du contenu sur la prévention des arnaques.</span>
+                            <span class="lang-option" data-lang="en">Use Facebook (many seniors are active there) and create content on scam prevention.</span>
+                        </div>
                     </div>
-                    <h3>
-                        <span class="lang-option active" data-lang="fr">Accompagnement</span>
-                        <span class="lang-option" data-lang="en">Support</span>
-                    </h3>
-                    <p>
-                        <span class="lang-option active" data-lang="fr">Soutien personnalisé pour les victimes de fraude tout au long du processus.</span>
-                        <span class="lang-option" data-lang="en">Personalized support for fraud victims throughout the process.</span>
-                    </p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>
+                            <span class="lang-option active" data-lang="fr">Ressources et partenaires</span>
+                            <span class="lang-option" data-lang="en">Resources & Partners</span>
+                        </h3>
+                        <p>
+                            <span class="lang-option active" data-lang="fr">Établir des partenariats locaux pour une portée élargie.</span>
+                            <span class="lang-option" data-lang="en">Establish local partnerships for broader reach.</span>
+                        </p>
+                        <div class="step-details">
+                            <span class="lang-option active" data-lang="fr">Partenariats avec des centres communautaires et organisations pour aînés.</span>
+                            <span class="lang-option" data-lang="en">Partnerships with community centers and senior organizations.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>
+                            <span class="lang-option active" data-lang="fr">Budget et étapes d'action</span>
+                            <span class="lang-option" data-lang="en">Budget & Action Steps</span>
+                        </h3>
+                        <p>
+                            <span class="lang-option active" data-lang="fr">Établir un budget simple et les premières étapes pour lancer notre organisme.</span>
+                            <span class="lang-option" data-lang="en">Establish a simple budget and initial steps to launch our organization.</span>
+                        </p>
+                        <div class="step-details">
+                            <span class="lang-option active" data-lang="fr">Élaborer un budget et des étapes initiales pour lancer l'organisme et commencer la campagne de sensibilisation.</span>
+                            <span class="lang-option" data-lang="en">Develop a budget and initial steps to launch the organization and start the awareness campaign.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">6</div>
+                    <div class="step-content">
+                        <h3>
+                            <span class="lang-option active" data-lang="fr">Mise en place au Québec</span>
+                            <span class="lang-option" data-lang="en">Setup in Quebec</span>
+                        </h3>
+                        <p>
+                            <span class="lang-option active" data-lang="fr">Processus d'enregistrement et conformité aux exigences provinciales.</span>
+                            <span class="lang-option" data-lang="en">Registration process and compliance with provincial requirements.</span>
+                        </p>
+                        <div class="step-details">
+                            <span class="lang-option active" data-lang="fr">Choisir un nom, créer un document fondateur, s'enregistrer au Registraire des entreprises et se conformer aux exigences provinciales pour les OSBL.</span>
+                            <span class="lang-option" data-lang="en">Choose a name, create a founding document, register with the Registraire des entreprises, and comply with provincial nonprofit requirements.</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1341,7 +1474,7 @@
                         </div>
                         <div class="contact-details">
                             <h4>Email</h4>
-                            <p>info@cpaq.ca<br>assistance@cpaq.ca</p>
+                            <p>info@protectionainesqc.ca<br>assistance@protectionainesqc.ca</p>
                         </div>
                     </div>
                     <div class="glass-card" style="padding: 32px;">
@@ -1408,18 +1541,20 @@
             <div class="footer-content">
                 <div>
                     <div class="footer-logo">
-                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMTAiIGZpbGw9IiMwZjY4ZDciLz4KPHN2ZyB4PSIxNSIgeT0iMTUiIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj4KPHBhdGggZD0iTTEyIDIyQzE3LjUyMiAyMiAyMiAxNy41MjIgMjIgMTJDMjIgNi40Nzc4IDE3LjUyMiAyIDEyIDJDNi40Nzc4IDIgMiA2LjQ3NzggMiAxMkMyIDE3LjUyMiA2LjQ3NzggMjIgMTIgMjJaIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiLz4KPHBhdGggZD0iTTEyIDE2VjEyIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiLz4KPHBhdGggZD0iTTEyIDhWOC4wMSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIi8+Cjwvc3ZnPgo8L3N2Zz4K" alt="Logo CPAQ">
+                        <div class="logo-img">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
                         <div class="footer-logo-text">
-                            <h3>CPAQ</h3>
+                            <h3>Protection Aînés Québec</h3>
                             <p>
-                                <span class="lang-option active" data-lang="fr">Conseil de Protection des Aînés du Québec</span>
-                                <span class="lang-option" data-lang="en">Quebec Council for Senior Protection</span>
+                                <span class="lang-option active" data-lang="fr">Organisme à but non lucratif</span>
+                                <span class="lang-option" data-lang="en">Non-profit organization</span>
                             </p>
                         </div>
                     </div>
                     <p class="footer-description">
-                        <span class="lang-option active" data-lang="fr">Organisme à but non lucratif dédié à la protection des aînés contre la fraude et les abus financiers.</span>
-                        <span class="lang-option" data-lang="en">Non-profit organization dedicated to protecting seniors from fraud and financial abuse.</span>
+                        <span class="lang-option active" data-lang="fr">Organisme dédié à la protection des aînés du Québec contre la fraude et les abus financiers.</span>
+                        <span class="lang-option" data-lang="en">Organization dedicated to protecting seniors in Quebec from fraud and financial abuse.</span>
                     </p>
                     <div class="footer-social">
                         <a href="#" class="social-link" aria-label="Facebook">
@@ -1450,9 +1585,9 @@
                             <span class="lang-option active" data-lang="fr">Notre mission</span>
                             <span class="lang-option" data-lang="en">Our mission</span>
                         </a></li>
-                        <li><a href="#services" class="footer-link">
-                            <span class="lang-option active" data-lang="fr">Services</span>
-                            <span class="lang-option" data-lang="en">Services</span>
+                        <li><a href="#processus" class="footer-link">
+                            <span class="lang-option active" data-lang="fr">Processus</span>
+                            <span class="lang-option" data-lang="en">Process</span>
                         </a></li>
                         <li><a href="#prevention" class="footer-link">
                             <span class="lang-option active" data-lang="fr">Prévention</span>
@@ -1520,8 +1655,8 @@
             <div class="footer-bottom">
                 <p class="copyright">Conception : © Sande D'Ocques</p>
                 <p>
-                    <span class="lang-option active" data-lang="fr">&copy; 2023 CPAQ - Conseil de Protection des Aînés du Québec. Tous droits réservés.</span>
-                    <span class="lang-option" data-lang="en">&copy; 2023 CPAQ - Quebec Council for Senior Protection. All rights reserved.</span>
+                    <span class="lang-option active" data-lang="fr">&copy; 2023 Protection Aînés Québec. Tous droits réservés.</span>
+                    <span class="lang-option" data-lang="en">&copy; 2023 Protection Aînés Québec. All rights reserved.</span>
                 </p>
             </div>
         </div>
@@ -1550,8 +1685,8 @@
             
             // Update page title
             document.title = currentLang === 'fr' 
-                ? 'CPAQ - Protéger nos aînés contre la fraude' 
-                : 'CPAQ - Protecting our seniors from fraud';
+                ? 'Protéger nos aînés contre la fraude' 
+                : 'Protecting our seniors from fraud';
                 
             // Update HTML lang attribute
             document.documentElement.lang = currentLang;
