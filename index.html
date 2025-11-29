@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Protéger nos aînés contre la fraude | Protecting our seniors from fraud</title>
+    <title>CPAQ - Conseil de Protection des Aînés du Québec</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -134,15 +134,18 @@
         }
 
         .logo-img {
-            width: 60px;
-            height: 60px;
+            width: 72px;
+            height: 72px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: #4dd0e1;
-            font-size: 1.8rem;
+            background: white;
+            border-radius: 12px;
+            color: #0f68d7;
+            font-weight: 700;
+            font-size: 1.5rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+            border: 2px solid rgba(255, 255, 255, 0.2);
         }
 
         .logo-text h1 {
@@ -154,6 +157,7 @@
         .logo-text span {
             color: var(--muted);
             font-size: 0.9rem;
+            line-height: 1.3;
         }
 
         .nav-links {
@@ -747,9 +751,9 @@
         }
 
         .footer-logo .logo-img {
-            width: 50px;
-            height: 50px;
-            font-size: 1.5rem;
+            width: 60px;
+            height: 60px;
+            font-size: 1.3rem;
         }
 
         .footer-logo-text h3 {
@@ -760,6 +764,7 @@
         .footer-logo-text p {
             color: var(--muted);
             font-size: 0.9rem;
+            line-height: 1.3;
         }
 
         .footer-description {
@@ -907,12 +912,12 @@
         <div class="nav-container">
             <div class="logo">
                 <div class="logo-img">
-                    <i class="fas fa-shield-alt"></i>
+                    CPAQ
                 </div>
                 <div class="logo-text">
-                    <h1>Protection Aînés Québec</h1>
-                    <span class="lang-option active" data-lang="fr">Organisme à but non lucratif</span>
-                    <span class="lang-option" data-lang="en">Non-profit organization</span>
+                    <h1>CPAQ</h1>
+                    <span class="lang-option active" data-lang="fr">Conseil de Protection<br>des Aînés du Québec</span>
+                    <span class="lang-option" data-lang="en">Council for Protection<br>of Quebec Seniors</span>
                 </div>
             </div>
             <ul class="nav-links" id="primary-nav">
@@ -1474,7 +1479,7 @@
                         </div>
                         <div class="contact-details">
                             <h4>Email</h4>
-                            <p>info@protectionainesqc.ca<br>assistance@protectionainesqc.ca</p>
+                            <p>info@cpaq.ca<br>assistance@cpaq.ca</p>
                         </div>
                     </div>
                     <div class="glass-card" style="padding: 32px;">
@@ -1542,13 +1547,13 @@
                 <div>
                     <div class="footer-logo">
                         <div class="logo-img">
-                            <i class="fas fa-shield-alt"></i>
+                            CPAQ
                         </div>
                         <div class="footer-logo-text">
-                            <h3>Protection Aînés Québec</h3>
+                            <h3>CPAQ</h3>
                             <p>
-                                <span class="lang-option active" data-lang="fr">Organisme à but non lucratif</span>
-                                <span class="lang-option" data-lang="en">Non-profit organization</span>
+                                <span class="lang-option active" data-lang="fr">Conseil de Protection<br>des Aînés du Québec</span>
+                                <span class="lang-option" data-lang="en">Council for Protection<br>of Quebec Seniors</span>
                             </p>
                         </div>
                     </div>
@@ -1655,8 +1660,8 @@
             <div class="footer-bottom">
                 <p class="copyright">Conception : © Sande D'Ocques</p>
                 <p>
-                    <span class="lang-option active" data-lang="fr">&copy; 2023 Protection Aînés Québec. Tous droits réservés.</span>
-                    <span class="lang-option" data-lang="en">&copy; 2023 Protection Aînés Québec. All rights reserved.</span>
+                    <span class="lang-option active" data-lang="fr">&copy; 2023 CPAQ - Conseil de Protection des Aînés du Québec. Tous droits réservés.</span>
+                    <span class="lang-option" data-lang="en">&copy; 2023 CPAQ - Council for Protection of Quebec Seniors. All rights reserved.</span>
                 </p>
             </div>
         </div>
@@ -1685,8 +1690,8 @@
             
             // Update page title
             document.title = currentLang === 'fr' 
-                ? 'Protéger nos aînés contre la fraude' 
-                : 'Protecting our seniors from fraud';
+                ? 'CPAQ - Conseil de Protection des Aînés du Québec' 
+                : 'CPAQ - Council for Protection of Quebec Seniors';
                 
             // Update HTML lang attribute
             document.documentElement.lang = currentLang;
