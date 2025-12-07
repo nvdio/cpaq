@@ -49,6 +49,7 @@
             padding: 10px 16px;
             border-radius: 0 0 12px 12px;
             z-index: 100;
+            transition: transform 0.2s ease, left 0.2s ease;
         }
 
         .skip-link:focus {
@@ -156,6 +157,14 @@
             border-radius: 12px;
             font-weight: 600;
             color: #dce8ff;
+            transition: all 0.25s ease;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            background: rgba(255, 255, 255, 0.12);
+            color: #fff;
+            box-shadow: inset 0 0 0 1px var(--card-border);
         }
 
         .nav-actions {
@@ -170,7 +179,44 @@
             color: #fff;
             padding: 10px 16px;
             border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
             font-weight: 500;
+        }
+
+        .lang-toggle:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .lang-toggle.active {
+            background: rgba(77, 208, 225, 0.2);
+            border-color: #4dd0e1;
+        }
+
+        .nav-toggle {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--card-border);
+            color: #fff;
+            padding: 10px 12px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .nav-toggle span {
+            width: 20px;
+            height: 2px;
+            background: #fff;
+            display: block;
+            border-radius: 2px;
         }
 
         .btn {
@@ -180,6 +226,9 @@
             padding: 14px 28px;
             border-radius: 14px;
             font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
             font-size: 1rem;
         }
 
@@ -189,6 +238,11 @@
             box-shadow: 0 10px 30px rgba(15, 104, 215, 0.4);
         }
 
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(15, 104, 215, 0.6);
+        }
+
         .btn-secondary {
             background: rgba(255, 255, 255, 0.1);
             color: white;
@@ -196,11 +250,23 @@
             backdrop-filter: blur(10px);
         }
 
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
         .btn-tertiary {
             border: 1px solid rgba(255, 255, 255, 0.35);
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
             color: #e8f1ff;
             box-shadow: 0 10px 24px rgba(14, 94, 187, 0.3);
+        }
+
+        .btn-tertiary:hover {
+            border-color: rgba(255,255,255,0.6);
+            transform: translateY(-1px);
+            box-shadow: 0 12px 28px rgba(14, 94, 187, 0.45);
         }
 
         /* Hero Section */
@@ -403,6 +469,11 @@
         .service-card {
             padding: 40px 32px;
             text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
         }
 
         .service-icon {
@@ -443,6 +514,12 @@
             background: rgba(255, 255, 255, 0.05);
             border-radius: 16px;
             border: 1px solid var(--card-border);
+            transition: transform 0.3s ease;
+        }
+
+        .process-step:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
         }
 
         .step-number {
@@ -537,6 +614,12 @@
             border-radius: 16px;
             border: 1px solid var(--card-border);
             height: 120px;
+            transition: all 0.3s ease;
+        }
+
+        .partner-logo:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
         }
 
         .partner-logo img {
@@ -610,6 +693,7 @@
             color: var(--text);
             font-family: inherit;
             font-size: 1rem;
+            transition: all 0.3s ease;
         }
 
         .form-control:focus {
@@ -680,6 +764,12 @@
             justify-content: center;
             background: rgba(255, 255, 255, 0.08);
             border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
         }
 
         .footer-heading {
@@ -697,6 +787,11 @@
 
         .footer-link {
             color: var(--muted);
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--text);
         }
 
         .footer-bottom {
@@ -742,6 +837,10 @@
             
             .nav-links {
                 display: none;
+            }
+            
+            .nav-toggle {
+                display: flex;
             }
         }
 
@@ -798,7 +897,7 @@
                 </div>
             </div>
             <ul class="nav-links" id="primary-nav">
-                <li><a href="#accueil" class="nav-link">
+                <li><a href="#accueil" class="nav-link active">
                     <span class="lang-option active" data-lang="fr">Accueil</span>
                     <span class="lang-option" data-lang="en">Home</span>
                 </a></li>
@@ -824,9 +923,14 @@
                 </a></li>
             </ul>
             <div class="nav-actions">
-                <button class="lang-toggle" id="langToggle">
+                <button class="lang-toggle" id="langToggle" aria-label="Changer de langue">
                     <span>FR</span>
                     <i class="fas fa-chevron-down"></i>
+                </button>
+                <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="primary-nav">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </button>
             </div>
         </div>
@@ -914,28 +1018,28 @@
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-value">1500</div>
+                    <div class="stat-value" data-count="1500">0</div>
                     <div class="stat-label">
                         <span class="lang-option active" data-lang="fr">Aînés protégés</span>
                         <span class="lang-option" data-lang="en">Seniors protected</span>
                     </div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">85</div>
+                    <div class="stat-value" data-count="85">0</div>
                     <div class="stat-label">
                         <span class="lang-option active" data-lang="fr">Cas résolus</span>
                         <span class="lang-option" data-lang="en">Cases resolved</span>
                     </div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">42</div>
+                    <div class="stat-value" data-count="42">0</div>
                     <div class="stat-label">
                         <span class="lang-option active" data-lang="fr">Partenaires</span>
                         <span class="lang-option" data-lang="en">Partners</span>
                     </div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">7</div>
+                    <div class="stat-value" data-count="7">0</div>
                     <div class="stat-label">
                         <span class="lang-option active" data-lang="fr">Ans d'expérience</span>
                         <span class="lang-option" data-lang="en">Years of experience</span>
@@ -1431,16 +1535,16 @@
                         <span class="lang-option" data-lang="en">Organization dedicated to protecting seniors in Quebec from fraud and financial abuse.</span>
                     </p>
                     <div class="footer-social">
-                        <a href="#" class="social-link">
+                        <a href="#" class="social-link" aria-label="Facebook">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="#" class="social-link">
+                        <a href="#" class="social-link" aria-label="Twitter">
                             <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="#" class="social-link">
+                        <a href="#" class="social-link" aria-label="LinkedIn">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="#" class="social-link">
+                        <a href="#" class="social-link" aria-label="Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
                     </div>
@@ -1535,6 +1639,180 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Language Toggle Functionality
+        const langToggle = document.getElementById('langToggle');
+        let currentLang = 'fr';
+
+        const toggleLanguage = () => {
+            currentLang = currentLang === 'fr' ? 'en' : 'fr';
+            
+            // Update all language-specific elements
+            document.querySelectorAll('.lang-option').forEach(element => {
+                if (element.getAttribute('data-lang') === currentLang) {
+                    element.classList.add('active');
+                } else {
+                    element.classList.remove('active');
+                }
+            });
+            
+            // Update language toggle button
+            const toggleText = langToggle.querySelector('span');
+            toggleText.textContent = currentLang.toUpperCase();
+            
+            // Update page title
+            document.title = currentLang === 'fr' 
+                ? 'CPAQ - Conseil de Protection des Aînés du Québec' 
+                : 'CPAQ - Council for Protection of Quebec Seniors';
+                
+            // Update HTML lang attribute
+            document.documentElement.lang = currentLang;
+            
+            // Update skip link
+            const skipLink = document.querySelector('.skip-link');
+            skipLink.textContent = currentLang === 'fr' 
+                ? 'Passer au contenu principal' 
+                : 'Skip to main content';
+            skipLink.href = currentLang === 'fr' ? '#accueil' : '#home';
+        };
+
+        langToggle.addEventListener('click', toggleLanguage);
+
+        // Navigation
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const links = document.querySelectorAll('.nav-link');
+
+        const setNavState = isOpen => {
+            navLinks?.classList.toggle('open', isOpen);
+            navToggle?.setAttribute('aria-expanded', String(isOpen));
+            navToggle?.setAttribute('aria-label', isOpen ? 
+                (currentLang === 'fr' ? 'Fermer le menu' : 'Close menu') : 
+                (currentLang === 'fr' ? 'Ouvrir le menu' : 'Open menu'));
+        };
+
+        const toggleNav = () => {
+            const isOpen = !navLinks.classList.contains('open');
+            setNavState(isOpen);
+        };
+
+        const closeNav = () => setNavState(false);
+
+        navToggle?.addEventListener('click', toggleNav);
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 1024) closeNav();
+        });
+
+        window.addEventListener('keydown', event => {
+            if (event.key === 'Escape') closeNav();
+        });
+
+        links.forEach(link => {
+            link.addEventListener('click', event => {
+                event.preventDefault();
+                const href = link.getAttribute('href');
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                    closeNav();
+                }
+            });
+        });
+
+        // Active nav link on scroll
+        const setActiveLink = () => {
+            const scrollPosition = window.scrollY + 140;
+            links.forEach(link => {
+                const section = document.querySelector(link.getAttribute('href'));
+                if (!section) return;
+
+                const offsetTop = section.offsetTop;
+                const offsetBottom = offsetTop + section.offsetHeight;
+                const isActive = scrollPosition >= offsetTop && scrollPosition < offsetBottom;
+
+                link.classList.toggle('active', isActive);
+            });
+        };
+
+        window.addEventListener('scroll', setActiveLink);
+        window.addEventListener('load', setActiveLink);
+
+        // Stats animation
+        const statValues = document.querySelectorAll('.stat-value');
+
+        const animateStats = entries => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+
+                const el = entry.target;
+                const targetValue = Number(el.dataset.count || 0);
+                let current = 0;
+                const increment = Math.max(1, Math.ceil(targetValue / 120));
+
+                const update = () => {
+                    current += increment;
+                    if (current >= targetValue) {
+                        el.textContent = targetValue.toLocaleString('fr-CA');
+                    } else {
+                        el.textContent = current.toLocaleString('fr-CA');
+                        requestAnimationFrame(update);
+                    }
+                };
+
+                update();
+                observer.unobserve(el);
+            });
+        };
+
+        const observer = new IntersectionObserver(animateStats, { threshold: 0.4 });
+        statValues.forEach(value => observer.observe(value));
+
+        // Contact form
+        const form = document.getElementById('contactForm');
+        const formStatus = document.querySelector('.form-status');
+
+        const validateEmail = value => /\S+@\S+\.\S+/.test(value);
+
+        form?.addEventListener('submit', event => {
+            event.preventDefault();
+            if (!formStatus) return;
+
+            const name = form.name.value.trim();
+            const email = form.email.value.trim();
+            const subject = form.subject.value.trim();
+            const message = form.message.value.trim();
+
+            if (!name || !email || !subject || !message) {
+                formStatus.textContent = currentLang === 'fr' 
+                    ? 'Merci de remplir tous les champs.' 
+                    : 'Please fill in all fields.';
+                formStatus.style.color = '#ffcc80';
+                return;
+            }
+
+            if (!validateEmail(email)) {
+                formStatus.textContent = currentLang === 'fr' 
+                    ? 'Veuillez saisir un courriel valide.' 
+                    : 'Please enter a valid email address.';
+                formStatus.style.color = '#ffcc80';
+                return;
+            }
+
+            // Success
+            formStatus.textContent = currentLang === 'fr' 
+                ? 'Message envoyé! Nous vous répondrons rapidement.' 
+                : 'Message sent! We will respond quickly.';
+            formStatus.style.color = '#90ee90';
+
+            setTimeout(() => {
+                form.reset();
+                formStatus.textContent = '';
+            }, 2500);
+        });
+    </script>
 </body>
 </html>
+
 
