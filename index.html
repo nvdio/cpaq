@@ -166,7 +166,6 @@
             box-shadow: inset 0 0 0 1px var(--card-border);
         }
 
-        /* REMOVED: Special highlight effect for active nav link */
         .nav-actions {
             display: flex;
             align-items: center;
@@ -1712,51 +1711,6 @@
         };
 
         langToggle.addEventListener('click', toggleLanguage);
-
-        // Navigation
-        const navToggle = document.querySelector('.nav-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        const links = document.querySelectorAll('.nav-link');
-
-        const setNavState = isOpen => {
-            navLinks?.classList.toggle('open', isOpen);
-            navToggle?.setAttribute('aria-expanded', String(isOpen));
-            navToggle?.setAttribute('aria-label', isOpen ? 
-                (currentLang === 'fr' ? 'Fermer le menu' : 'Close menu') : 
-                (currentLang === 'fr' ? 'Ouvrir le menu' : 'Open menu'));
-        };
-
-        const toggleNav = () => {
-            const isOpen = !navLinks.classList.contains('open');
-            setNavState(isOpen);
-        };
-
-        const closeNav = () => setNavState(false);
-
-        navToggle?.addEventListener('click', toggleNav);
-
-        window.addEventListener('resize', () => {
-            if (window.innerWidth >= 1024) closeNav();
-        });
-
-        window.addEventListener('keydown', event => {
-            if (event.key === 'Escape') closeNav();
-        });
-
-        links.forEach(link => {
-            link.addEventListener('click', event => {
-                event.preventDefault();
-                const href = link.getAttribute('href');
-                const target = document.querySelector(href);
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                    closeNav();
-                }
-            });
-        });
-
-        // Active nav link on scroll - REMOVED: No longer needed as we removed the highlight effect
-        // The JavaScript for setting active class has been removed
 
         // Stats animation
         const statValues = document.querySelectorAll('.stat-value');
