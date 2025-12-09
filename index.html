@@ -433,39 +433,6 @@
             gap: 8px;
         }
 
-        /* Stats Section */
-        .stats {
-            background: rgba(0, 10, 30, 0.4);
-            border-top: 1px solid var(--card-border);
-            border-bottom: 1px solid var(--card-border);
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 32px;
-        }
-
-        .stat-card {
-            text-align: center;
-            padding: 32px 20px;
-        }
-
-        .stat-value {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-            background: linear-gradient(135deg, #4dd0e1, #b3e5fc);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .stat-label {
-            color: var(--muted);
-            font-size: 1rem;
-        }
-
         /* Services Section */
         .services-grid {
             display: grid;
@@ -856,10 +823,6 @@
                 padding: 60px 0;
             }
             
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
             .services-grid {
                 grid-template-columns: 1fr;
             }
@@ -883,7 +846,6 @@
         }
 
         @media (max-width: 480px) {
-            .stats-grid,
             .partners-grid {
                 grid-template-columns: 1fr;
             }
@@ -1014,42 +976,6 @@
                                 <span class="lang-option" data-lang="en">Quick response</span>
                             </span>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-value" data-count="1500">0</div>
-                    <div class="stat-label">
-                        <span class="lang-option active" data-lang="fr">Aînés protégés</span>
-                        <span class="lang-option" data-lang="en">Seniors protected</span>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value" data-count="85">0</div>
-                    <div class="stat-label">
-                        <span class="lang-option active" data-lang="fr">Cas résolus</span>
-                        <span class="lang-option" data-lang="en">Cases resolved</span>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value" data-count="42">0</div>
-                    <div class="stat-label">
-                        <span class="lang-option active" data-lang="fr">Partenaires</span>
-                        <span class="lang-option" data-lang="en">Partners</span>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value" data-count="7">0</div>
-                    <div class="stat-label">
-                        <span class="lang-option active" data-lang="fr">Ans d'expérience</span>
-                        <span class="lang-option" data-lang="en">Years of experience</span>
                     </div>
                 </div>
             </div>
@@ -1745,36 +1671,6 @@
 
         window.addEventListener('scroll', setActiveLink);
         window.addEventListener('load', setActiveLink);
-
-        // Stats animation
-        const statValues = document.querySelectorAll('.stat-value');
-
-        const animateStats = entries => {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) return;
-
-                const el = entry.target;
-                const targetValue = Number(el.dataset.count || 0);
-                let current = 0;
-                const increment = Math.max(1, Math.ceil(targetValue / 120));
-
-                const update = () => {
-                    current += increment;
-                    if (current >= targetValue) {
-                        el.textContent = targetValue.toLocaleString('fr-CA');
-                    } else {
-                        el.textContent = current.toLocaleString('fr-CA');
-                        requestAnimationFrame(update);
-                    }
-                };
-
-                update();
-                observer.unobserve(el);
-            });
-        };
-
-        const observer = new IntersectionObserver(animateStats, { threshold: 0.4 });
-        statValues.forEach(value => observer.observe(value));
 
         // Contact form
         const form = document.getElementById('contactForm');
